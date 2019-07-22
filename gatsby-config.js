@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Material-UI v4 Gatsby App`,
+    title: `Royalty Lend`,
     description: `An example app.`,
     author: `@sa-webb`,
   },
