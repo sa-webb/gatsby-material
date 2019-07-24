@@ -5,27 +5,76 @@ import { makeStyles } from "@material-ui/core/styles"
 import AppBar from "@material-ui/core/AppBar"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
-import Button from "@material-ui/core/Button"
 
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    marginBottom: 10
   },
   title: {
     flexGrow: 1,
   },
+  appbar: {
+    backgroundColor: '#eeeeee'
+  }
 })
 
 const Header = ({ siteTitle }) => {
   const classes = useStyles()
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="default">
+      <AppBar className={classes.appbar} position="static">
         <Toolbar>
-          <Typography className={classes.title} variant="h6" color="inherit">
+          <Typography className={classes.title} variant="h5" color="textPrimary">
             {siteTitle}
           </Typography>
-          <Button color="inherit" href="/blog">Login</Button>
+          <Link
+            data-testid="about-link"
+            to="/blog"
+            style={{
+              color: `#212121`,
+              display: `inline-block`,
+              float: `right`,
+              lineHeight: `35px`,
+              textDecoration: `none`,
+              marginRight: 20,
+              fontSize: 18
+
+            }}
+          >
+            Blog
+          </Link>
+          <Link
+            data-testid="about-link"
+            to="/about/"
+            style={{
+              color: `#212121`,
+              display: `inline-block`,
+              float: `right`,
+              lineHeight: `35px`,
+              textDecoration: `none`,
+              marginRight: 20,
+              fontSize: 18
+            }}
+          >
+            About
+          </Link>
+          <Link
+            data-testid="about-link"
+            to="/contact/"
+            style={{
+              color: `#212121`,
+              display: `inline-block`,
+              float: `right`,
+              lineHeight: `35px`,
+              textDecoration: `none`,
+              marginRight: 15,
+              fontSize: 18
+
+            }}
+          >
+            Contact
+          </Link>
         </Toolbar>
       </AppBar>
     </div>
