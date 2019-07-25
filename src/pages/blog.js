@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Paper from "@material-ui/core/Paper"
@@ -204,6 +205,38 @@ export default function Blog() {
                         />
                       </Hidden>
                     </Card>
+                  </CardActionArea>
+                </Grid>
+              ))}
+            </Grid>
+            <Grid container spacing={4} className={classes.cardGrid}>
+              {navPosts.map(post => (
+                <Grid item key={post.title} xs={12} md={6}>
+                  <CardActionArea component="a">
+                    <Link to={`/blog/${post.url}`} style={{textDecoration: `none`}}>
+                    <Card className={classes.card}>
+                      <div className={classes.cardDetails}>
+                        <CardContent>
+                          <Typography component="h2" variant="h5">
+                            {post.title}
+                          </Typography>
+                          <Typography variant="subtitle1" color="textSecondary">
+                            {post.date}
+                          </Typography>
+                          <Typography variant="subtitle1" paragraph>
+                            {post.description}
+                          </Typography>
+                        </CardContent>
+                      </div>
+                      <Hidden xsDown>
+                        <CardMedia
+                          className={classes.cardMedia}
+                          image="https://source.unsplash.com/random"
+                          title="Image title"
+                        />
+                      </Hidden>
+                    </Card>
+                    </Link>
                   </CardActionArea>
                 </Grid>
               ))}
