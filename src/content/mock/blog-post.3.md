@@ -1,4 +1,4 @@
-## New feature
+## Blog 3
 
 #### March 14, 2020 by [Tom](/)
 

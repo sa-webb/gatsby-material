@@ -1,4 +1,4 @@
-## Another blog post
+## Blog 2
 
 #### March 23, 2020 by [Matt](/)
 

@@ -1,4 +1,4 @@
-## Sample blog post
+## Blog 1
 
 #### April 1, 2020 by [Olivier](/)
 
