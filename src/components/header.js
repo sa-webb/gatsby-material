@@ -9,14 +9,14 @@ import Typography from "@material-ui/core/Typography"
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    marginBottom: 10
+    marginBottom: 10,
   },
   title: {
     flexGrow: 1,
   },
   appbar: {
-    backgroundColor: '#eeeeee'
-  }
+    backgroundColor: "#fafafa",
+  },
 })
 
 const Header = ({ siteTitle }) => {
@@ -25,9 +25,29 @@ const Header = ({ siteTitle }) => {
     <div className={classes.root}>
       <AppBar className={classes.appbar} position="static">
         <Toolbar>
-          <Typography className={classes.title} variant="h5" color="textPrimary">
-            {siteTitle}
-          </Typography>
+          <Link
+            data-testid="about-link"
+            to="/"
+            style={{
+              color: `#212121`,
+              display: `inline-block`,
+              float: `right`,
+              lineHeight: `35px`,
+              textDecoration: `none`,
+              marginRight: 20,
+              fontSize: 18,
+              flex: 1,
+            }}
+          >
+            <Typography
+              className={classes.title}
+              variant="h5"
+              color="textPrimary"
+            >
+              {siteTitle}
+            </Typography>
+          </Link>
+
           <Link
             data-testid="about-link"
             to="/blog"
@@ -38,8 +58,7 @@ const Header = ({ siteTitle }) => {
               lineHeight: `35px`,
               textDecoration: `none`,
               marginRight: 20,
-              fontSize: 18
-
+              fontSize: 18,
             }}
           >
             Blog
@@ -54,7 +73,7 @@ const Header = ({ siteTitle }) => {
               lineHeight: `35px`,
               textDecoration: `none`,
               marginRight: 20,
-              fontSize: 18
+              fontSize: 18,
             }}
           >
             About
@@ -69,8 +88,7 @@ const Header = ({ siteTitle }) => {
               lineHeight: `35px`,
               textDecoration: `none`,
               marginRight: 15,
-              fontSize: 18
-
+              fontSize: 18,
             }}
           >
             Contact
