@@ -18,17 +18,6 @@ import post2 from "../content/mock/blog-post.2.md"
 import post3 from "../content/mock/blog-post.3.md"
 import Layout from "../components/layout"
 
-
-function MadeWithLove() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Built with love by the "}
-      
-      {" team."}
-    </Typography>
-  )
-}
-
 const useStyles = makeStyles(theme => ({
   toolbar: {
     borderBottom: `1px solid ${theme.palette.divider}`,
@@ -117,21 +106,6 @@ const navPosts = [
 
 const posts = [post1, post2, post3]
 
-const archives = [
-  "March 2020",
-  "February 2020",
-  "January 2020",
-  "December 2019",
-  "November 2019",
-  "October 2019",
-  "September 2019",
-  "August 2019",
-  "July 2019",
-  "June 2019",
-  "May 2019",
-  "April 2019",
-]
-
 export default function Blog() {
   const classes = useStyles()
 
@@ -213,7 +187,7 @@ export default function Blog() {
               {navPosts.map(post => (
                 <Grid item key={post.title} xs={12} md={6}>
                   <CardActionArea component="a">
-                    <Link to={`/blog/${post.url}`} style={{textDecoration: `none`}}>
+                    <Link to="post" style={{textDecoration: `none`}}>
                     <Card className={classes.card}>
                       <div className={classes.cardDetails}>
                         <CardContent>
@@ -249,6 +223,7 @@ export default function Blog() {
                   Blogs are Below!
                 </Typography>
                 <Divider />
+                
                 {posts.map(post => (
                   <Markdown
                     className={classes.markdown}
