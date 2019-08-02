@@ -12,7 +12,7 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import Layout from '../components/layout';
+import Layout from "../layout/layout";
 
 function MadeWithLove() {
   return (

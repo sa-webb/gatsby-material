@@ -10,7 +10,7 @@ import Divider from "@material-ui/core/Divider"
 import Container from "@material-ui/core/Container"
 import Markdown from "../components/helpers/Markdown"
 
-import Layout from "../components/layout"
+import Layout from "../layout/layout";
 import BlogCard from "../components/blogCard"
 
 import post1 from "../content/mock/blog-post.1.md"

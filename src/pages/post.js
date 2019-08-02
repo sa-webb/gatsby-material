@@ -6,7 +6,7 @@ import Markdown from "../components/helpers/Markdown"
 import post1 from "../content/mock/blog-post.1.md"
 import post2 from "../content/mock/blog-post.2.md"
 import post3 from "../content/mock/blog-post.3.md"
-import Layout from "../components/layout"
+import Layout from "../layout/layout"
 
 const useStyles = makeStyles(theme => ({
     toolbar: {
