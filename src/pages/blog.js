@@ -1,22 +1,21 @@
 import React from "react"
+// eslint-disable-next-line
 import { Link } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Paper from "@material-ui/core/Paper"
 import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
-import Card from "@material-ui/core/Card"
-import CardActionArea from "@material-ui/core/CardActionArea"
-import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
-import Hidden from "@material-ui/core/Hidden"
 import Divider from "@material-ui/core/Divider"
 import Container from "@material-ui/core/Container"
 import Markdown from "../components/helpers/Markdown"
+
+import Layout from "../components/layout"
+import BlogCard from "../components/blogCard"
+
 import post1 from "../content/mock/blog-post.1.md"
 import post2 from "../content/mock/blog-post.2.md"
 import post3 from "../content/mock/blog-post.3.md"
-import Layout from "../components/layout"
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -62,15 +61,6 @@ const useStyles = makeStyles(theme => ({
   mainGrid: {
     marginTop: theme.spacing(3),
   },
-  card: {
-    display: "flex",
-  },
-  cardDetails: {
-    flex: 1,
-  },
-  cardMedia: {
-    width: 160,
-  },
   markdown: {
     ...theme.typography.body2,
     padding: theme.spacing(3, 0),
@@ -89,21 +79,7 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const navPosts = [
-  {
-    title: "Nav Post 1",
-    date: "Nov 12",
-    description: "This card uses material's CardAction href to route.",
-    url: "navpost1",
-  },
-  {
-    title: "Nav Post 2",
-    date: "Nov 11",
-    description: "This card uses material's CardAction href to route.",
-    url: "navpost2",
-  },
-]
-
+// Clever way to statically map imports
 const posts = [post1, post2, post3]
 
 export default function Blog() {
@@ -152,70 +128,11 @@ export default function Blog() {
               </Grid>
             </Paper>
             {/* End main featured post */}
+
             {/* Sub featured posts */}
-            <Grid container spacing={4} className={classes.cardGrid}>
-              {navPosts.map(post => (
-                <Grid item key={post.title} xs={12} md={6}>
-                  <CardActionArea component="a" href={`/blog/${post.url}`}>
-                    <Card className={classes.card}>
-                      <div className={classes.cardDetails}>
-                        <CardContent>
-                          <Typography component="h2" variant="h5">
-                            {post.title}
-                          </Typography>
-                          <Typography variant="subtitle1" color="textSecondary">
-                            {post.date}
-                          </Typography>
-                          <Typography variant="subtitle1" paragraph>
-                            {post.description}
-                          </Typography>
-                        </CardContent>
-                      </div>
-                      <Hidden xsDown>
-                        <CardMedia
-                          className={classes.cardMedia}
-                          image="https://source.unsplash.com/random"
-                          title="Image title"
-                        />
-                      </Hidden>
-                    </Card>
-                  </CardActionArea>
-                </Grid>
-              ))}
-            </Grid>
-            <Grid container spacing={4} className={classes.cardGrid}>
-              {navPosts.map(post => (
-                <Grid item key={post.title} xs={12} md={6}>
-                  <CardActionArea component="a">
-                    <Link to="post" style={{textDecoration: `none`}}>
-                    <Card className={classes.card}>
-                      <div className={classes.cardDetails}>
-                        <CardContent>
-                          <Typography component="h2" variant="h5">
-                            {post.title}
-                          </Typography>
-                          <Typography variant="subtitle1" color="textSecondary">
-                            {post.date}
-                          </Typography>
-                          <Typography variant="subtitle1" paragraph>
-                            {post.description}
-                          </Typography>
-                        </CardContent>
-                      </div>
-                      <Hidden xsDown>
-                        <CardMedia
-                          className={classes.cardMedia}
-                          image="https://source.unsplash.com/random"
-                          title="Image title"
-                        />
-                      </Hidden>
-                    </Card>
-                    </Link>
-                  </CardActionArea>
-                </Grid>
-              ))}
-            </Grid>
+            <BlogCard/>
             {/* End sub featured posts */}
+
             <Grid container spacing={5} className={classes.mainGrid}>
               {/* Main content */}
               <Grid item xs={12} md={8}>
