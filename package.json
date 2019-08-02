@@ -16,6 +16,7 @@
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.1.5",
     "gatsby-source-filesystem": "^2.0.39",
+    "gatsby-transformer-remark": "^2.6.10",
     "gatsby-transformer-sharp": "^2.1.21",
     "html-loader": "^0.5.5",
     "markdown-loader": "^5.0.0",
