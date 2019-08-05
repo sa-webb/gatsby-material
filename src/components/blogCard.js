@@ -37,12 +37,6 @@ const navPosts = [
       description: "This card uses material's CardAction href to route.",
       url: "my-second-post",
     },
-    {
-        title: "Nav Post 3",
-        date: "Nov 11",
-        description: "This card uses material's CardAction href to route.",
-        url: "my-second-post",
-      },
   ]
 
 export default function BlogCard() {
