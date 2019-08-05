@@ -65,7 +65,7 @@ const Header = ({ siteTitle }) => {
           </Link>
           <Link
             data-testid="about-link"
-            to="/about/"
+            to="/about"
             style={{
               color: `#212121`,
               display: `inline-block`,
@@ -80,7 +80,7 @@ const Header = ({ siteTitle }) => {
           </Link>
           <Link
             data-testid="about-link"
-            to="/contact/"
+            to="/contact"
             style={{
               color: `#212121`,
               display: `inline-block`,
