@@ -50,7 +50,7 @@ const Header = ({ siteTitle }) => {
 
           <Link
             data-testid="about-link"
-            to="/blog"
+            to="/solutions"
             style={{
               color: `#212121`,
               display: `inline-block`,
@@ -61,7 +61,7 @@ const Header = ({ siteTitle }) => {
               fontSize: 18,
             }}
           >
-            Blog
+            Solutions
           </Link>
           <Link
             data-testid="about-link"
