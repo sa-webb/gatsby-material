@@ -10,12 +10,13 @@ import Divider from "@material-ui/core/Divider"
 import Container from "@material-ui/core/Container"
 import Markdown from "../components/helpers/Markdown"
 
-import Layout from "../layout/layout";
+import Layout from "../layout/layout"
+// eslint-disable-next-line
 import BlogCard from "../components/blogCard"
 
-import post1 from "../content/mock/blog-post.1.md"
-import post2 from "../content/mock/blog-post.2.md"
-import post3 from "../content/mock/blog-post.3.md"
+import post1 from "../markdown/post-1.md"
+import post2 from "../markdown/post-2.md"
+import post3 from "../markdown/post-3.md"
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -130,7 +131,7 @@ export default function Blog() {
             {/* End main featured post */}
 
             {/* Sub featured posts */}
-            <BlogCard/>
+            {/* <BlogCard/> */}
             {/* End sub featured posts */}
 
             <Grid container spacing={5} className={classes.mainGrid}>

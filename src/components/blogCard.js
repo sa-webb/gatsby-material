@@ -1,83 +1,89 @@
 import React from "react"
 import { Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import { makeStyles } from "@material-ui/core/styles"
-import CssBaseline from "@material-ui/core/CssBaseline"
 import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
-import Hidden from "@material-ui/core/Hidden"
 
+import Layout from "../layout/layout"
+
+import { TwitterIcon } from "react-share"
+import { CssBaseline } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
-    card: {
-        display: "flex",
-      },
-      cardDetails: {
-        flex: 1,
-      },
-      cardMedia: {
-        width: 160,
-      },
+  card: {
+    //display: "flex",
+    backgroundColor: "blue"
+  },
+  cardDetails: {
+    flex: 1,
+  },
+  cardMedia: {
+    backgroundColor: "blue",
+  },
 }))
 
-const navPosts = [
-    {
-      title: "Nav Post 1",
-      date: "Nov 12",
-      description: "This card uses material's CardAction href to route.",
-      url: "my-first-post",
-    },
-    {
-      title: "Nav Post 2",
-      date: "Nov 11",
-      description: "This card uses material's CardAction href to route.",
-      url: "my-second-post",
-    },
-  ]
+export default ({ data }) => {
+  const classes = useStyles()
 
-export default function BlogCard() {
-
-    const classes = useStyles()
-
-    return (
-      <>
-      <CssBaseline />
-        <Grid container spacing={4} className={classes.cardGrid}>
-              {navPosts.map(post => (
-                <Grid item key={post.title} xs={12} md={6}>
-                  <CardActionArea component="a">
-                    <Link to={`/blog/${post.url}`} style={{textDecoration: `none`}}>
+  return (
+    <React.Fragment>
+      <CssBaseline/>
+      <Layout>
+        <div>
+          <Grid container spacing={4} className={classes.cardGrid}>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+              <Grid item key={node.id} xs={12} md={3}>
+                <CardActionArea component="a">
+                  <Link
+                    to={`${node.frontmatter.path}`}
+                    style={{ textDecoration: `none` }}
+                  >
                     <Card className={classes.card}>
                       <div className={classes.cardDetails}>
                         <CardContent>
                           <Typography component="h2" variant="h5">
-                            {post.title}
+                            {node.frontmatter.title}
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
-                            {post.date}
+                            {node.frontmatter.date}
                           </Typography>
                           <Typography variant="subtitle1" paragraph>
-                            {post.description}
+                            {node.frontmatter.path}
                           </Typography>
+                          <TwitterIcon size={32} round={true} />
                         </CardContent>
                       </div>
-                      <Hidden xsDown>
-                        <CardMedia
-                          className={classes.cardMedia}
-                          image="https://source.unsplash.com/random"
-                          title="Image title"
-                        />
-                      </Hidden>
                     </Card>
-                    </Link>
-                  </CardActionArea>
-                </Grid>
-              ))}
-            </Grid>
-            </>
-    )
+                  </Link>
+                </CardActionArea>
+              </Grid>
+            ))}
+          </Grid>
+        </div>
+      </Layout>
+    </React.Fragment>
+  )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+        }
+      }
+    }
+  }
+`
