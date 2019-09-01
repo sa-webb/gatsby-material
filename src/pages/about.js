@@ -89,7 +89,7 @@ export default ({ data }) => {
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image={"https://picsum.photos/id/1015/6000/4000"}
+                    component={Image}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
