@@ -1,9 +1,9 @@
 {
   "name": "gatsby-material-template",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Material-UI Gatsby component library",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Austin Webb <stevenaustinwebb@gmail.com>",
   "dependencies": {
     "@material-ui/core": "^4.1.1",
     "@material-ui/icons": "^4.2.1",
@@ -24,7 +24,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-share": "^3.0.1"
   },
   "devDependencies": {
     "prettier": "^1.18.2"
