@@ -10,6 +10,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Layout from "../layout/layout";
+import { graphql } from 'gatsby';
+import Image from "../components/image";
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -30,6 +32,7 @@ const useStyles = makeStyles(theme => ({
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
+    zIndex: 4
   },
   cardMedia: {
     paddingTop: '56.25%', // 16:9
@@ -43,9 +46,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-export default function Album() {
+export default ({ data }) => {
   const classes = useStyles();
 
   return (
@@ -83,20 +84,20 @@ export default function Album() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map(card => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+              <Grid item key={node.id} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
-                    image="https://source.unsplash.com/random"
+                    image={"https://picsum.photos/id/1015/6000/4000"}
                     title="Image title"
                   />
                   <CardContent className={classes.cardContent}>
                     <Typography gutterBottom variant="h5" component="h2">
-                      Heading
+                      {}
                     </Typography>
                     <Typography>
-                      This is a media card. You can use this section to describe the content.
+                      {node.frontmatter.title}
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -117,3 +118,21 @@ export default function Album() {
     </React.Fragment>
   );
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+        }
+      }
+    }
+  }
+`
