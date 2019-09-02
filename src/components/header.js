@@ -15,7 +15,8 @@ const useStyles = makeStyles({
     flexGrow: 1,
   },
   appbar: {
-    backgroundColor: "#fafafa",
+    background: 'transparent',
+    boxShadow: 'none'
   },
 })
 
