@@ -11,8 +11,6 @@ import Container from "@material-ui/core/Container"
 import Markdown from "../components/helpers/Markdown"
 
 import Layout from "../layout/layout"
-// eslint-disable-next-line
-import BlogCard from "../components/blogCard"
 
 import post1 from "../markdown/post-1.md"
 import post2 from "../markdown/post-2.md"
@@ -131,7 +129,9 @@ export default function Blog() {
             {/* End main featured post */}
 
             {/* Sub featured posts */}
+
             {/* <BlogCard/> */}
+            
             {/* End sub featured posts */}
 
             <Grid container spacing={5} className={classes.mainGrid}>
