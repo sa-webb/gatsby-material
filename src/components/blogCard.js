@@ -70,20 +70,20 @@ export default ({ data }) => {
   )
 }
 
-export const query = graphql`
-  query {
-    allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
-      edges {
-        node {
-          id
-          frontmatter {
-            path
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-        }
-      }
-    }
-  }
-`
+// export const StaticQuery = graphql`
+//   query {
+//     allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC }) {
+//       totalCount
+//       edges {
+//         node {
+//           id
+//           frontmatter {
+//             path
+//             title
+//             date(formatString: "DD MMMM, YYYY")
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
