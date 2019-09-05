@@ -14,8 +14,9 @@ import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardContent from "@material-ui/core/CardContent"
 import { TwitterIcon, FacebookIcon } from "react-share"
-import { CardActions } from '@material-ui/core';
+import { CardActions } from '@material-ui/core'
 import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -168,6 +169,7 @@ export default ({ data }) => {
                     style={{ textDecoration: `none` }}
                   >
                     <Card className={classes.card}>
+                    <Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
                       <div className={classes.cardDetails}>
                         <CardContent>
                           <Typography component="h2" variant="h5">
@@ -205,6 +207,13 @@ export const query = graphql`
             path
             title
             date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 630, maxHeight: 400) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }
