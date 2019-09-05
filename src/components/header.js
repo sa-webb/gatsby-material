@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => {
         <Toolbar>
           <Link
             data-testid="about-link"
-            to="/"
+            to="/home"
             style={{
               color: `#212121`,
               display: `inline-block`,
