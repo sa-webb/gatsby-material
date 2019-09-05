@@ -1,0 +1,7 @@
+Purple with Material Orange
+background: 'linear-gradient(45deg, #a503fc 30%, #FF8E53 90%)',
+
+Purple and Blue 
+background: 'linear-gradient(45deg, #a503fc 30%, #03ebfc 110% )',
+
+https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient
