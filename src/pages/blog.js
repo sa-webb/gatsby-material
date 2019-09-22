@@ -1,6 +1,4 @@
 import React from "react"
-// eslint-disable-next-line
-import { Link } from "gatsby"
 import { makeStyles } from "@material-ui/core/styles"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Paper from "@material-ui/core/Paper"
@@ -8,13 +6,8 @@ import Typography from "@material-ui/core/Typography"
 import Grid from "@material-ui/core/Grid"
 import Divider from "@material-ui/core/Divider"
 import Container from "@material-ui/core/Container"
-import Markdown from "../components/helpers/Markdown"
-
+import { graphql } from "gatsby"
 import Layout from "../layout/layout"
-
-import post1 from "../markdown/post-1.md"
-import post2 from "../markdown/post-2.md"
-import post3 from "../markdown/post-3.md"
 
 const useStyles = makeStyles(theme => ({
   toolbar: {
@@ -79,9 +72,9 @@ const useStyles = makeStyles(theme => ({
 }))
 
 // Clever way to statically map imports
-const posts = [post1, post2, post3]
+// const posts = [post1, post2, post3]
 
-export default function Blog() {
+export default ({ data }) => {
   const classes = useStyles()
 
   return (
@@ -142,13 +135,10 @@ export default function Blog() {
                 </Typography>
                 <Divider />
                 
-                {posts.map(post => (
-                  <Markdown
-                    className={classes.markdown}
-                    key={post.substring(0, 40)}
-                  >
-                    {post}
-                  </Markdown>
+                {data.allMarkdownRemark.edges.map(({ node }) => (
+                  <Typography>
+                    {node.frontmatter.title}
+                  </Typography>
                 ))}
               </Grid>
               {/* End main content */}
@@ -187,3 +177,28 @@ export default function Blog() {
     </React.Fragment>
   )
 }
+
+export const query = graphql`
+  query {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+            title
+            date(formatString: "DD MMMM, YYYY")
+            featuredImage {
+              childImageSharp{
+                sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
