@@ -28,7 +28,7 @@ function MadeWithLove() {
 const useStyles = makeStyles(theme => ({
   '@global': {
     body: {
-      backgroundColor: theme.palette.common.white,
+      backgroundColor: theme.palette.common.black,
     },
     ul: {
       margin: 0,
@@ -52,6 +52,7 @@ const useStyles = makeStyles(theme => ({
   },
   heroContent: {
     padding: theme.spacing(8, 0, 6),
+    backgroundColor: 'red'
   },
   cardHeader: {
     backgroundColor: theme.palette.grey[200],
