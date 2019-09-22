@@ -12,6 +12,7 @@ import Container from "@material-ui/core/Container"
 import Layout from "../layout/layout"
 import { graphql } from "gatsby"
 import Image from "../components/image"
+import Img from "gatsby-image"
 
 const useStyles = makeStyles(theme => ({
   icon: {
@@ -108,6 +109,7 @@ export default ({ data }) => {
                         {}
                       </Typography>
                       <Typography>{node.frontmatter.title}</Typography>
+                      <Img sizes={node.frontmatter.featuredImage.childImageSharp.sizes} />
                     </CardContent>
                     <CardActions>
                       <Button size="small" color="primary">
@@ -139,7 +141,13 @@ export const query = graphql`
             path
             title
             date(formatString: "DD MMMM, YYYY")
-            
+            featuredImage {
+              childImageSharp{
+                sizes(maxWidth: 630) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }
