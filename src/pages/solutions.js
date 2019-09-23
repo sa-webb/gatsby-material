@@ -12,15 +12,15 @@ import CardContent from "@material-ui/core/CardContent"
 import Layout from "../layout/layout"
 
 import { TwitterIcon, FacebookIcon } from "react-share"
-import { CssBaseline, CardActions } from '@material-ui/core';
+import { CssBaseline, CardActions } from "@material-ui/core"
 
 const useStyles = makeStyles(theme => ({
   card: {
     //display: "flex",
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column'
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
   },
   cardDetails: {
     flex: 1,
@@ -35,7 +35,7 @@ export default ({ data }) => {
 
   return (
     <React.Fragment>
-      <CssBaseline/>
+      <CssBaseline />
       <Layout>
         <div>
           <Grid container spacing={4} className={classes.cardGrid}>
@@ -43,7 +43,7 @@ export default ({ data }) => {
               <Grid item key={node.id} xs={12} md={3}>
                 <CardActionArea component="a">
                   <Link
-                    to={`${node.frontmatter.path}`}
+                    to={`${node.fields.slug}`}
                     style={{ textDecoration: `none` }}
                   >
                     <Card className={classes.card}>
@@ -57,7 +57,7 @@ export default ({ data }) => {
                           </Typography>
                         </CardContent>
                         <CardActions>
-                        <TwitterIcon size={32} round={true} />
+                          <TwitterIcon size={32} round={true} />
                           <FacebookIcon size={32} />
                         </CardActions>
                       </div>
@@ -75,15 +75,26 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark (sort: { fields: [frontmatter___date], order: DESC }) {
-      totalCount
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/solutions/" } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
-          id
+          fields {
+            slug
+          }
           frontmatter {
-            path
             title
             date(formatString: "DD MMMM, YYYY")
+            description
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 700, maxHeight: 500) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
         }
       }
