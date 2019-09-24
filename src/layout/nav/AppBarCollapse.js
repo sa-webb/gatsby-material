@@ -90,7 +90,7 @@ function AppBarCollapse() {
             lineHeight: `35px`,
             textDecoration: `none`,
             marginRight: 20,
-            fontSize: 18,
+            fontSize: 22,
           }}
         >
           Contact
@@ -105,7 +105,7 @@ function AppBarCollapse() {
             lineHeight: `35px`,
             textDecoration: `none`,
             marginRight: 20,
-            fontSize: 18,
+            fontSize: 22,
           }}
         >
           About
@@ -120,7 +120,7 @@ function AppBarCollapse() {
             lineHeight: `35px`,
             textDecoration: `none`,
             marginRight: 15,
-            fontSize: 18,
+            fontSize: 22,
           }}
         >
           Solutions
