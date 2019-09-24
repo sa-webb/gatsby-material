@@ -27,10 +27,10 @@ function AppBarCollapse() {
   return (
     <div className={classes.root}>
       <ButtonAppBarCollapse>
-        <MenuItem>
+        <MenuItem className={classes.item}>
           <Link
             data-testid="about-link"
-            to="/horses"
+            to="/solutions"
             style={{
               color: `#212121`,
               display: `inline-block`,
@@ -41,13 +41,13 @@ function AppBarCollapse() {
               fontSize: 18,
             }}
           >
-            Horses
+            Solutions
           </Link>
         </MenuItem>
         <MenuItem>
           <Link
             data-testid="about-link"
-            to="/horses"
+            to="/about"
             style={{
               color: `#212121`,
               display: `inline-block`,
@@ -58,13 +58,13 @@ function AppBarCollapse() {
               fontSize: 18,
             }}
           >
-            Goats
+            Learn
           </Link>
         </MenuItem>
         <MenuItem>
           <Link
             data-testid="about-link"
-            to="/teams"
+            to="/about"
             style={{
               color: `#212121`,
               display: `inline-block`,
@@ -75,7 +75,24 @@ function AppBarCollapse() {
               fontSize: 18,
             }}
           >
-            Teams
+            About
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link
+            data-testid="about-link"
+            to="/contact"
+            style={{
+              color: `#212121`,
+              display: `inline-block`,
+              float: `right`,
+              lineHeight: `35px`,
+              textDecoration: `none`,
+              marginRight: 20,
+              fontSize: 18,
+            }}
+          >
+            Contact
           </Link>
         </MenuItem>
       </ButtonAppBarCollapse>
@@ -109,6 +126,21 @@ function AppBarCollapse() {
           }}
         >
           About
+        </Link>
+        <Link
+          data-testid="about-link"
+          to="/learn"
+          style={{
+            color: `#212121`,
+            display: `inline-block`,
+            float: `right`,
+            lineHeight: `35px`,
+            textDecoration: `none`,
+            marginRight: 20,
+            fontSize: 22,
+          }}
+        >
+          Learn
         </Link>
         <Link
           data-testid="about-link"
