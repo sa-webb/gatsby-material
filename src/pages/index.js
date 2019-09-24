@@ -95,7 +95,7 @@ export default ({ data }) => {
             color="textSecondary"
             component="p"
           >
-            We are dedicated to your success.
+            This is centered text that is good to place a catchy statement. Notice the elementary linear gradient background.
           </Typography>
         </Container>
 
