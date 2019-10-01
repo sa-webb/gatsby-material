@@ -9,7 +9,7 @@ import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
-import Layout from "../layout/layout"
+import Layout from "../layout/theme/layout"
 import { graphql } from "gatsby"
 import Image from "../components/image"
 import Img from "gatsby-image"
@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(2),
   },
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.primary.main,
     padding: theme.spacing(8, 0, 6),
   },
   heroButtons: {
@@ -80,12 +80,12 @@ export default ({ data }) => {
               <div className={classes.heroButtons}>
                 <Grid container spacing={2} justify="center">
                   <Grid item>
-                    <Button variant="contained" color="primary">
+                    <Button variant="contained" color="default">
                       Main call to action
                     </Button>
                   </Grid>
                   <Grid item>
-                    <Button variant="outlined" color="primary">
+                    <Button variant="outlined" color="default">
                       Secondary action
                     </Button>
                   </Grid>

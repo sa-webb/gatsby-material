@@ -12,7 +12,8 @@ import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import Layout from "../layout/layout";
+import Layout from '../layout/layout';
+
 
 function MadeWithLove() {
   return (
@@ -28,7 +29,7 @@ function MadeWithLove() {
 const useStyles = makeStyles(theme => ({
   '@global': {
     body: {
-      backgroundColor: theme.palette.common.black,
+      backgroundColor: theme.palette.text.hint,
     },
     ul: {
       margin: 0,
@@ -67,6 +68,7 @@ const useStyles = makeStyles(theme => ({
     borderTop: `1px solid ${theme.palette.divider}`,
     marginTop: theme.spacing(8),
     paddingTop: theme.spacing(3),
+    backgroundColor: 'blue',
     paddingBottom: theme.spacing(3),
     [theme.breakpoints.up('sm')]: {
       paddingTop: theme.spacing(6),
@@ -187,7 +189,7 @@ export default function Contact() {
         </Grid>
       </Container>
       {/* Footer */}
-      <Container maxWidth="md" component="footer" className={classes.footer}>
+      <Container maxWidth="lg" component="footer" className={classes.footer}>
         <Grid container spacing={4} justify="space-evenly">
           {footers.map(footer => (
             <Grid item xs={6} sm={3} key={footer.title}>
