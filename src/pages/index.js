@@ -8,7 +8,7 @@ import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardContent from "@material-ui/core/CardContent"
-import { TwitterIcon, FacebookIcon, RedditIcon, LinkedinIcon, PinterestIcon, TelegramIcon } from "react-share"
+import { RedditIcon } from "react-share"
 import { CardActions } from "@material-ui/core"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -45,7 +45,7 @@ const useStyles = makeStyles(theme => ({
   },
   card: {
     //display: "flex",
-    //background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
     height: "100%",
     display: "flex",
     flexDirection: "column",
@@ -56,6 +56,9 @@ const useStyles = makeStyles(theme => ({
   },
   cardMedia: {
     backgroundColor: "blue",
+  },
+  cardFooter: {
+    
   },
   textColor: {
     color: "white",
@@ -75,7 +78,7 @@ export default ({ data }) => {
           component="div"
           style={{ height: "100vh" }}
         /> */}
-        <Header siteTitle="Material Gatsby"/>
+        <Header siteTitle={data.site.siteMetadata.title}/>
         <main>
         <Container
           maxWidth="sm"
@@ -123,13 +126,8 @@ export default ({ data }) => {
                             {node.frontmatter.date}
                           </Typography>
                         </CardContent>
-                        <CardActions >
-                          <TwitterIcon size={32} round={true} />
-                          <FacebookIcon size={32} round={true}/>
+                        <CardActions disableSpacing className={classes.cardFooter} action="">
                           <RedditIcon size={32} round={true}/>
-                          <LinkedinIcon size={32} round={true}/>
-                          <PinterestIcon size={32} round={true}/>
-                          <TelegramIcon size={32} round={true}/>
                         </CardActions>
                       </div>
                     </Card>
@@ -147,6 +145,11 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/solutions/" } }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -162,7 +165,7 @@ export const query = graphql`
             description
             featuredImage {
               childImageSharp {
-                sizes(maxWidth: 700, maxHeight: 500) {
+                sizes(maxWidth: 700, maxHeight: 450) {
                   ...GatsbyImageSharpSizes
                 }
               }
