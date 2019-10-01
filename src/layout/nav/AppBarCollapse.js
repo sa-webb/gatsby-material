@@ -30,7 +30,7 @@ function AppBarCollapse() {
         <MenuItem className={classes.item}>
           <Link
             data-testid="about-link"
-            to="/solutions"
+            to="/home"
             style={{
               color: `#212121`,
               display: `inline-block`,
@@ -41,7 +41,7 @@ function AppBarCollapse() {
               fontSize: 18,
             }}
           >
-            Solutions
+            HomeV2
           </Link>
         </MenuItem>
         <MenuItem>
@@ -144,7 +144,7 @@ function AppBarCollapse() {
         </Link>
         <Link
           data-testid="about-link"
-          to="/solutions"
+          to="/home"
           style={{
             color: `#212121`,
             display: `inline-block`,
@@ -155,7 +155,7 @@ function AppBarCollapse() {
             fontSize: 22,
           }}
         >
-          Solutions
+          HomeV2
         </Link>
       </div>
     </div>
