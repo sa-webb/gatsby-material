@@ -1,4 +1,12 @@
-# gatsby-material
+# GatsbyJS and Material-UI demo
 
-Gatsby app that uses Material V4.
+## Lighthouse Audits
 
+## Demonstrates
+
+* Cross Platform
+* Layout practices
+* Css global styles
+* Material UI theme
+* Gatsby plugins
+* GraphQL queries
