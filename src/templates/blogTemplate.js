@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../layout/layout"
+import Layout from "../layout/theme/layout"
 import Img from "gatsby-image"
 
 export default function Template({
