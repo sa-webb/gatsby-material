@@ -51,7 +51,7 @@ const Header = ({siteTitle}) => {
               lineHeight: `35px`,
               textDecoration: `none`,
               marginRight: 20,
-              fontSize: 28,
+              fontSize: 24,
               flex: 1,
             }}
           >
