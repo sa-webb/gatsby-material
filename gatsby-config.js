@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `V Ø Ł T Å M`,
+    title: `Gatsby Material`,
     description: `An example app.`,
     author: `@sa-webb`,
   },
