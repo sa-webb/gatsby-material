@@ -3,14 +3,13 @@ import CssBaseline from "@material-ui/core/CssBaseline"
 import Typography from "@material-ui/core/Typography"
 import Container from "@material-ui/core/Container"
 import { makeStyles } from "@material-ui/core/styles"
-import { Link } from "gatsby"
 import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardContent from "@material-ui/core/CardContent"
 import { RedditIcon } from "react-share"
 import { CardActions } from "@material-ui/core"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import Header from "../layout/nav/header"
 
@@ -43,6 +42,9 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: theme.spacing(8),
     //backgroundColor: 'black',
   },
+  gridTest: {
+    //backgroundColor: "white"
+  },
   card: {
     //display: "flex",
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
@@ -64,14 +66,14 @@ const useStyles = makeStyles(theme => ({
     color: "white",
   },
   heroContent: {
-    padding: theme.spacing(2, 0, 2),
+    padding: theme.spacing(2, 1, 0),
   }
 }))
 
 export default ({ data }) => {
   const classes = useStyles()
   return (
-    <React.Fragment>
+    <>
       <CssBaseline />
       <Container className={classes.root}>
         {/* <Typography
@@ -86,24 +88,17 @@ export default ({ data }) => {
           className={classes.heroContent}
         >
           <Typography
-            component="h1"
-            variant="h2"
-            align="center"
-            color="secondary"
-            gutterBottom
-          ></Typography>
-          <Typography
             variant="h5"
             align="center"
             color="textSecondary"
             component="p"
           >
-            This is centered text that is good to place a catchy statement. Notice the elementary linear gradient background.
+            This is centered text that is good to place a catchy statement.
           </Typography>
         </Container>
 
         <Container className={classes.cardGrid} >
-          <Grid container spacing={6} alignItems="center" justify="space-evenly">
+          <Grid container spacing={6} alignItems="center" justify="space-evenly" className={classes.gridTest}>
             {data.allMarkdownRemark.edges.map(({ node }) => (
               <Grid item key={node.id} xs={12} md={4}>
                 <CardActionArea component="a">
@@ -139,7 +134,7 @@ export default ({ data }) => {
         </Container>
         </main>
       </Container>
-    </React.Fragment>
+    </>
   )
 }
 
