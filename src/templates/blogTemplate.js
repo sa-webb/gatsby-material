@@ -3,10 +3,8 @@ import { graphql } from "gatsby"
 import Layout from "../layout/theme/layout"
 import Img from "gatsby-image"
 
-export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
-}) {
-  const { markdownRemark } = data // data.markdownRemark holds our post data
+export default function Template({ data }) {
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
@@ -14,7 +12,10 @@ export default function Template({
         <div className="blog-post">
           <h1>{frontmatter.title}</h1>
           <h2>{frontmatter.date}</h2>
-          <Img style={{ height: 400 }} sizes={frontmatter.featuredImage.childImageSharp.sizes} />
+          <Img
+            style={{ height: 400 }}
+            sizes={frontmatter.featuredImage.childImageSharp.sizes}
+          />
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
