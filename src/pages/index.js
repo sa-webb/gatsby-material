@@ -99,7 +99,7 @@ export default ({ data }) => {
               <Grid item key={node.id} xs={12} md={4}>
                 <CardActionArea component="a">
                   <Link
-                    to={`${node.fields.slug}`}
+                    to={`${node.frontmatter.category}${node.fields.slug}`}
                     style={{ textDecoration: `none` }}
                   >
                     <Card className={classes.card}>
@@ -110,7 +110,10 @@ export default ({ data }) => {
                       />
                       <div className={classes.cardDetails}>
                         <CardContent>
-                          <Typography component="h2" variant="h5">
+                        <Typography variant="h4" gutterBottom>
+                            {node.frontmatter.category}
+                          </Typography>
+                          <Typography variant="h5" gutterBottom>
                             {node.frontmatter.title}
                           </Typography>
                           <Typography variant="subtitle1" color="textSecondary">
@@ -118,7 +121,7 @@ export default ({ data }) => {
                           </Typography>
                         </CardContent>
                         <CardActions disableSpacing className={classes.cardFooter} action="">
-                          <RedditIcon size={32} round={true}/>
+                          <RedditIcon size={32} round={true} />
                         </CardActions>
                       </div>
                     </Card>
@@ -145,6 +148,7 @@ export const query = graphql`
           }
           id
           frontmatter {
+            category
             title
             date(formatString: "DD MMMM, YYYY")
             featuredImage {
