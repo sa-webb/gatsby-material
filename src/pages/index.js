@@ -137,22 +137,19 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/solutions/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-    ) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           fields {
             slug
           }
+          id
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
-            description
             featuredImage {
-              childImageSharp {
-                sizes(maxWidth: 700, maxHeight: 450) {
+              childImageSharp{
+                sizes(maxWidth: 630) {
                   ...GatsbyImageSharpSizes
                 }
               }
