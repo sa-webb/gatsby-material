@@ -11,24 +11,20 @@ import { RedditIcon } from "react-share"
 import { CardActions } from "@material-ui/core"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import Header from "../layout/nav/header"
+import Layout from "../layout/layout"
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     flex: 1,
-    background: "linear-gradient(135deg, #a503fc 30%, #03ebfc 110% )",
-    height: "100vh",
+    //background: "linear-gradient(135deg, #a503fc 30%, #03ebfc 110% )",
+    //height: "100vh",
   },
   cardSpace: {
     flexGrow: 1,
     flex: 1,
     //background: 'white',
     height: "50vh",
-  },
-  appbar: {
-    background: "transparent",
-    boxShadow: "none",
   },
   title: {
     color: "white",
@@ -75,12 +71,12 @@ export default ({ data }) => {
   return (
     <>
       <CssBaseline />
+      <Layout>
       <Container className={classes.root}>
         {/* <Typography
           component="div"
           style={{ height: "100vh" }}
         /> */}
-        <Header siteTitle={data.site.siteMetadata.title}/>
         <main>
         <Container
           maxWidth="sm"
@@ -134,17 +130,13 @@ export default ({ data }) => {
         </Container>
         </main>
       </Container>
+      </Layout>
     </>
   )
 }
 
 export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/solutions/" } }
       sort: { fields: [frontmatter___date], order: DESC }

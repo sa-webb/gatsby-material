@@ -9,7 +9,7 @@ import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 import { makeStyles } from "@material-ui/core/styles"
 import Container from "@material-ui/core/Container"
-import Layout from "../layout/theme/layout"
+import Layout from "../layout/layout"
 import { graphql } from "gatsby"
 import Image from "../components/image"
 import Img from "gatsby-image"
@@ -40,10 +40,6 @@ const useStyles = makeStyles(theme => ({
   },
   cardContent: {
     flexGrow: 1,
-  },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
   },
 }))
 

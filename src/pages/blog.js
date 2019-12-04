@@ -78,11 +78,10 @@ export default ({ data }) => {
   const classes = useStyles()
 
   return (
-    <React.Fragment>
+    <>
       <CssBaseline />
       <Layout>
         <Container maxWidth="lg">
-          <main>
             {/* Main featured post */}
             <Paper className={classes.mainFeaturedPost}>
               {/* Increase the priority of the hero background image */}
@@ -171,10 +170,9 @@ export default ({ data }) => {
               </Grid>
               {/* End sidebar */}
             </Grid>
-          </main>
         </Container>
       </Layout>
-    </React.Fragment>
+    </>
   )
 }
 
