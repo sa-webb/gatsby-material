@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./nav/header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => (
     <StaticQuery
@@ -20,6 +21,7 @@ const Layout = ({ children }) => (
           <div>
             <main>{children}</main>
           </div>
+          <Footer/>
         </>
       )}
     />
