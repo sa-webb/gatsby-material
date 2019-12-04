@@ -129,7 +129,7 @@ function AppBarCollapse() {
         </Link>
         <Link
           data-testid="about-link"
-          to="/learn"
+          to="/solutions"
           style={{
             color: `#212121`,
             display: `inline-block`,
@@ -140,11 +140,11 @@ function AppBarCollapse() {
             fontSize: 20,
           }}
         >
-          Learn
+          Solutions
         </Link>
         <Link
           data-testid="about-link"
-          to="/home"
+          to="/blog"
           style={{
             color: `#212121`,
             display: `inline-block`,
@@ -155,7 +155,7 @@ function AppBarCollapse() {
             fontSize: 20,
           }}
         >
-          Home
+          Blog
         </Link>
       </div>
     </div>
