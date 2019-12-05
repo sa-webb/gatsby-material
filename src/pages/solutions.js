@@ -1,7 +1,7 @@
 import React from "react"
+import { TwitterIcon, FacebookIcon } from "react-share"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
-
 import { makeStyles } from "@material-ui/core/styles"
 import Typography from "@material-ui/core/Typography"
 import Container from "@material-ui/core/Container"
@@ -9,11 +9,9 @@ import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
 import CardContent from "@material-ui/core/CardContent"
-
+import CssBaseline from "@material-ui/core/CssBaseline"
 import Layout from "../layout/layout"
-
-import { TwitterIcon, FacebookIcon } from "react-share"
-import { CssBaseline, CardActions } from "@material-ui/core"
+import CardActions from "@material-ui/core/CardActions"
 
 const useStyles = makeStyles(theme => ({
   cardGrid: {
