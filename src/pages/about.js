@@ -129,7 +129,7 @@ export default ({ data }) => {
 export const query = graphql`
   query {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/solutions/" } }
+      filter: { fileAbsolutePath: { regex: "/topic1/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
