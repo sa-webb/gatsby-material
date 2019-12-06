@@ -27,7 +27,7 @@ function AppBarCollapse() {
   return (
     <div className={classes.root}>
       <ButtonAppBarCollapse>
-        <MenuItem className={classes.item}>
+        <MenuItem>
           <Link
             data-testid="about-link"
             to="/topic1"
@@ -80,22 +80,7 @@ function AppBarCollapse() {
         </MenuItem>
       </ButtonAppBarCollapse>
       <div className={classes.buttonBar} id="appbar-collapse">
-        <Link
-          data-testid="about-link"
-          to="/topic1"
-          style={{
-            color: `#212121`,
-            display: `inline-block`,
-            float: `right`,
-            lineHeight: `35px`,
-            textDecoration: `none`,
-            marginRight: 20,
-            fontSize: 20,
-          }}
-        >
-          Topic1
-        </Link>
-        <Link
+      <Link
           data-testid="about-link"
           to="/about"
           style={{
@@ -109,6 +94,21 @@ function AppBarCollapse() {
           }}
         >
           About
+        </Link>
+      <Link
+          data-testid="about-link"
+          to="/blog"
+          style={{
+            color: `#212121`,
+            display: `inline-block`,
+            float: `right`,
+            lineHeight: `35px`,
+            textDecoration: `none`,
+            marginRight: 15,
+            fontSize: 20,
+          }}
+        >
+          Blog
         </Link>
         <Link
           data-testid="about-link"
@@ -127,18 +127,18 @@ function AppBarCollapse() {
         </Link>
         <Link
           data-testid="about-link"
-          to="/blog"
+          to="/topic1"
           style={{
             color: `#212121`,
             display: `inline-block`,
             float: `right`,
             lineHeight: `35px`,
             textDecoration: `none`,
-            marginRight: 15,
+            marginRight: 20,
             fontSize: 20,
           }}
         >
-          Blog
+          Topic1
         </Link>
       </div>
     </div>
