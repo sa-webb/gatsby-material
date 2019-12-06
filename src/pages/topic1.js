@@ -46,7 +46,7 @@ export default ({ data }) => {
                 <Grid item key={node.id} xs={12} md={4}>
                   <CardActionArea component="a">
                     <Link
-                      to={`${node.fields.slug}`}
+                      to={`${node.frontmatter.category}${node.fields.slug}`}
                       style={{ textDecoration: `none` }}
                     >
                       <Card className={classes.card}>
@@ -91,6 +91,7 @@ export const query = graphql`
             slug
           }
           frontmatter {
+            category
             title
             date(formatString: "DD MMMM, YYYY")
             description

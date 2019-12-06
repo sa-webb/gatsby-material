@@ -8,10 +8,10 @@ import Container from "@material-ui/core/Container"
 import Grid from "@material-ui/core/Grid"
 import Card from "@material-ui/core/Card"
 import CardActionArea from "@material-ui/core/CardActionArea"
+import CardActions from "@material-ui/core/CardActions"
 import CardContent from "@material-ui/core/CardContent"
 import CssBaseline from "@material-ui/core/CssBaseline"
 import Layout from "../layout/layout"
-import CardActions from "@material-ui/core/CardActions"
 
 const useStyles = makeStyles(theme => ({
   cardGrid: {
@@ -46,7 +46,7 @@ export default ({ data }) => {
                 <Grid item key={node.id} xs={12} md={4}>
                   <CardActionArea component="a">
                     <Link
-                      to={`${node.fields.slug}`}
+                      to={`${node.frontmatter.category}${node.fields.slug}`}
                       style={{ textDecoration: `none` }}
                     >
                       <Card className={classes.card}>
@@ -91,6 +91,7 @@ export const query = graphql`
             slug
           }
           frontmatter {
+            category
             title
             date(formatString: "DD MMMM, YYYY")
             description
