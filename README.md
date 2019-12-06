@@ -6,9 +6,9 @@ Install the gatsby-cli if you haven't already.
 
 Clone the repository
 
-Run `gatsby develop`
+For Desktop - Run `gatsby develop`
 
-Run & expose network `gatsby develop -H 0.0.0.0` **device must be on the same network as host**
+For Mobile - Run & expose network `gatsby develop -H 0.0.0.0` **device must be on the same network as host**
 
 ## Lighthouse Audits
 
@@ -37,6 +37,9 @@ If any sub-topic was named sub-topic1 then it would return when we only wanted t
 But what if we wanted to retrieve the first sub-topic of every topic?
 With the names specified this way then a simple regex of `topic-1` would return them all.
 Therefore we have reproducability both programmatically and intuitively while avoiding collisions.
+However, couldn't we write a query to fetch the first sub-topic of every topic by searching for the oldest
+article in each folder? Yes. But that query is more complex than a simply regex match.
+Admittedly I am certain which is best performance wise, but being aware of both implementations is most important.
 
 ├── topic1
 │   ├── sub-topic-1
