@@ -30,7 +30,7 @@ function AppBarCollapse() {
         <MenuItem className={classes.item}>
           <Link
             data-testid="about-link"
-            to="/home"
+            to="/topic1"
             style={{
               color: `#212121`,
               display: `inline-block`,
@@ -41,13 +41,13 @@ function AppBarCollapse() {
               fontSize: 18,
             }}
           >
-            HomeV2
+            Topic1
           </Link>
         </MenuItem>
         <MenuItem>
           <Link
             data-testid="about-link"
-            to="/about"
+            to="/topic2"
             style={{
               color: `#212121`,
               display: `inline-block`,
@@ -58,13 +58,13 @@ function AppBarCollapse() {
               fontSize: 18,
             }}
           >
-            Learn
+            Topic2
           </Link>
         </MenuItem>
         <MenuItem>
           <Link
             data-testid="about-link"
-            to="/about"
+            to="/topic3"
             style={{
               color: `#212121`,
               display: `inline-block`,
@@ -75,31 +75,14 @@ function AppBarCollapse() {
               fontSize: 18,
             }}
           >
-            About
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link
-            data-testid="about-link"
-            to="/contact"
-            style={{
-              color: `#212121`,
-              display: `inline-block`,
-              float: `right`,
-              lineHeight: `35px`,
-              textDecoration: `none`,
-              marginRight: 20,
-              fontSize: 18,
-            }}
-          >
-            Contact
+            Topic3
           </Link>
         </MenuItem>
       </ButtonAppBarCollapse>
       <div className={classes.buttonBar} id="appbar-collapse">
         <Link
           data-testid="about-link"
-          to="/contact"
+          to="/topic1"
           style={{
             color: `#212121`,
             display: `inline-block`,
@@ -110,7 +93,7 @@ function AppBarCollapse() {
             fontSize: 20,
           }}
         >
-          Contact
+          Topic1
         </Link>
         <Link
           data-testid="about-link"
@@ -129,7 +112,7 @@ function AppBarCollapse() {
         </Link>
         <Link
           data-testid="about-link"
-          to="/solutions"
+          to="/topic2"
           style={{
             color: `#212121`,
             display: `inline-block`,
@@ -140,7 +123,7 @@ function AppBarCollapse() {
             fontSize: 20,
           }}
         >
-          Solutions
+          Topic 2
         </Link>
         <Link
           data-testid="about-link"
