@@ -80,24 +80,9 @@ function AppBarCollapse() {
         </MenuItem>
       </ButtonAppBarCollapse>
       <div className={classes.buttonBar} id="appbar-collapse">
-      <Link
+        <Link
           data-testid="about-link"
-          to="/about"
-          style={{
-            color: `#212121`,
-            display: `inline-block`,
-            float: `right`,
-            lineHeight: `35px`,
-            textDecoration: `none`,
-            marginRight: 20,
-            fontSize: 20,
-          }}
-        >
-          About
-        </Link>
-      <Link
-          data-testid="about-link"
-          to="/blog"
+          to="/topic3"
           style={{
             color: `#212121`,
             display: `inline-block`,
@@ -108,7 +93,7 @@ function AppBarCollapse() {
             fontSize: 20,
           }}
         >
-          Blog
+          Topic 3
         </Link>
         <Link
           data-testid="about-link"
